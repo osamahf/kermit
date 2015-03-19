@@ -1,4 +1,5 @@
 
+
 var http = require('http');
 //loads http module
 var app=http.createServer(function (req, res) {
@@ -8,9 +9,7 @@ res.writeHead(200, {'Content-Type': 'text/plain'});
 res.end('Hello World\n');
 //outputs string with line end symbol
 });
-var port = process.env.PORT || 5000;
+var port = process.env.OPENSHIFT_NODEJS_PORT;
 app.listen(port, function() {
 console.log("Listening on " + port);
 });
-
-
